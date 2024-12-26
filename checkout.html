@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+       
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .logo img {
+    height: 50px;
+    width: auto;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: right;
+    padding-right: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+
+main {
+    text-align: center;
+    margin: 50px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+
+#checkoutForm {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#checkoutForm h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#checkoutForm label {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+#checkoutForm input,
+#checkoutForm select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#checkoutForm input[type="text"],
+#checkoutForm input[type="email"] {
+    width: 100%;
+}
+
+#checkoutForm button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#checkoutForm button:hover {
+    background-color: #218838;
+}
+
+
+#billSummary {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#billSummary h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#billTable {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+#billTable th,
+#billTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#billTable th {
+    background-color: #f8f9fa;
+}
+
+#totalAmount {
+    font-size: 1.5em;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#customerDetails {
+    margin-top: 30px;
+    font-size: 1.1em;
+}
+
+#billSummary button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#billSummary button:hover {
+    background-color: #218838;
+}
+
+
+@media screen and (max-width: 768px) {
+    #checkoutForm, #billSummary {
+        width: 90%;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/grocery-store-logo-design-template-26efc5e6e40131b8138308aed1bb075b_screen.jpg?ts=1599902810" >
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to the Online Food Store</h1>
+        <p>Explore the best foods from the comfort of your home.</p>
+        
+    </main>
+    <h1>Checkout</h1>
+
+    
+    <div id="checkoutForm">
+        <h3>Enter Your Details</h3>
+        <form onsubmit="event.preventDefault(); showBill();">
+            <label>Name:</label><br>
+            <input type="text" id="name" required><br>
+            <label>Email:</label><br>
+            <input type="email" id="email" required><br>
+            <label>Address:</label><br>
+            <input type="text" id="address" required><br>
+            <label>Phone Number:</label><br>
+            <input type="text" id="phone" required><br>
+            <label>Pincode:</label><br>
+            <input type="text" id="pincode" required><br>
+            <label>Payment Method:</label><br>
+            <select id="payment">
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="PayPal">PayPal</option>
+            </select><br><br>
+            <button type="submit">Proceed to Finalize Order</button>
+        </form>
+    </div>
+
+    
+    <div id="billSummary" style="display:none;">
+        <h3>Bill Summary</h3>
+        <table id="billTable" border="1">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <p id="totalAmount"></p>
+        <div id="customerDetails"></div>
+        <button onclick="goHome()">Place Order</button>
+    </div>
+
+    <script>
+        
+        function showBill() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+            const pincode = document.getElementById('pincode').value;
+            const paymentMethod = document.getElementById('payment').value;
+
+            if (!name || !email || !address || !phone || !pincode) {
+                alert("Please fill all the fields.");
+                return;
+            }
+
+            const itemsInCart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (itemsInCart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+
+            let totalAmount = 0;
+            const billTable = document.getElementById('billTable').getElementsByTagName('tbody')[0];
+            billTable.innerHTML = ''; 
+
+            itemsInCart.forEach(item => {
+                const itemTotal = item.quantity * item.price;
+                totalAmount += itemTotal;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>$${itemTotal.toFixed(2)}</td>
+                `;
+                billTable.appendChild(row);
+            });
+
+            document.getElementById('checkoutForm').style.display = 'none';
+            document.getElementById('billSummary').style.display = 'block';
+
+            document.getElementById('totalAmount').innerText = `Total Amount: $${totalAmount.toFixed(2)}`;
+            document.getElementById('customerDetails').innerHTML = `
+                <strong>Name:</strong> ${name}<br>
+                <strong>Email:</strong> ${email}<br>
+                <strong>Address:</strong> ${address}<br>
+                <strong>Phone No.:</strong> ${phone}<br>
+                <strong>Pincode:</strong> ${pincode}<br>
+                <strong>Payment Method:</strong> ${paymentMethod}
+            `;
+        }
+
+        function goHome() {
+            alert("Order Placed Successfully");
+            localStorage.removeItem('cart');  
+            window.location.href = "index.html"; 
+        }
+    </script>
+</body>
+</html>

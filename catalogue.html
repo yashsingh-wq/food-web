@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue - Online Food Store</title>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+header .logo img {
+    height: 50px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f0a500;
+}
+
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main p {
+    font-size: 20px;
+    color: #555;
+}
+
+
+h2 {
+    margin-top: 30px;
+    font-size: 2rem;
+}
+
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+    font-size: 1.2rem;
+}
+
+table td {
+    background-color: #f9f9f9;
+}
+
+table img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+button {
+    background-color: #f0a500;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+
+@media screen and (max-width: 768px) {
+    header .logo img {
+        height: 40px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table img {
+        width: 80px;
+        height: 80px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    table th, table td {
+        padding: 6px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 6px 15px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/grocery-store-logo-design-template-26efc5e6e40131b8138308aed1bb075b_screen.jpg?ts=1599902810" >
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to the Online Food Store</h1>
+        <p>Explore the best foods from the comfort of your home.</p>
+        
+    </main>
+
+    <h2>Food Catalogue</h2>
+    
+    
+    <table>
+        <tr>
+            <th>Food</th>
+            <th>Recipe</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Pizza</td>
+            <td>Cheese, Tomato</td>
+            <td>$10</td>
+            <td><img src="https://content.jdmagicbox.com/comp/def_content/pizza_outlets/default-pizza-outlets-13.jpg" alt="Pizza"></td>
+            <td><button onclick="addToCart('Pizza', 10)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Burger</td>
+            <td>Beef, Lettuce</td>
+            <td>$5</td>
+            <td><img src="https://www.thecookierookie.com/wp-content/uploads/2023/04/featured-stovetop-burgers-recipe.jpg" alt="Burger"></td>
+            <td><button onclick="addToCart('Burger', 5)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Pasta</td>
+            <td>Tomato Sauce, Spaghetti</td>
+            <td>$8</td>
+            <td><img src="https://www.spicebangla.com/wp-content/uploads/2024/08/Spicy-Pasta-recipe-optimised-scaled.webp" alt="Pasta"></td>
+            <td><button onclick="addToCart('Pasta', 8)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Rasgulla</td>
+            <td>milk, lemon , sugar , water </td>
+            <td> 5$</td>
+            <td><img src="https://cdn.zeptonow.com/production///tr:w-1000,ar-100-100,pr-true,f-auto,q-80/web/recipes/rasgulla.png" alt="Rasgulla"></td>
+            <td><button onclick="addToCart('Rasgulla',5 )">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Chole Bhature</td>
+            <td> a combination of chana masala (spicy white chickpeas) and bhatura/puri, a deep-fried bread made from maida.</td>
+            <td>10$</td>
+            <td><img src="https://content.jdmagicbox.com/comp/def_content/chole-bhature-outlets/nbhqxejkwd-chole-bhature-outlets-8-i7t0j.jpg" alt="Chole Bhature"></td>
+            <td><button onclick="addToCart('Chole Bhature', 10)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Masala Idli</td>
+            <td> black gram, rice, salt and water</td>
+            <td>8$</td>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrshH4YtLBT0EKGkOGSzSj_NyrjqYEDyY0OQ&s" alt="Masala Idli"></td>
+            <td><button onclick="addToCart('Masala Idli',8 )">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Ice-cream</td>
+            <td>Milk, cream, milk solids, sugars, modifying agents and flavourings </td>
+            <td>2$</td>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGgTGDbJN2WtqTl5qpNc1DCUfjkirSNXc82g&s" alt="Ice-cream"></td>
+            <td><button onclick="addToCart('Ice-cream', 2)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>chilli potato</td>
+            <td>garlic, green chilies, onions, spring onions, chilli sauce and soya sauce</td>
+            <td>4$</td>
+            <td><img src="https://rakskitchen.net/wp-content/uploads/2022/07/honey-chilli.jpg" alt="chilli potato"></td>
+            <td><button onclick="addToCart('chilli potato',4 )">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td> lava cake</td>
+            <td>Chocolate,Butter,Eggs,Sugar</td>
+            <td>9$</td>
+            <td><img src="https://www.melskitchencafe.com/wp-content/uploads/2023/01/updated-lava-cakes7.jpg" alt=" lava cake"></td>
+            <td><button onclick="addToCart(' lava cake',9 )">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td> Veg-Manchurian</td>
+            <td>vegetable,corn flour,soya-sauce,chili-sauce</td>
+            <td>12$</td>
+            <td><img src="https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375-750x750.jpg" alt="Veg-Manchurian"></td>
+            <td><button onclick="addToCart('Veg-Manchurian',12 )">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td> Jalebi</td>
+            <td>deep-frying maida flour ,sugar syrup</td>
+            <td>9$</td>
+            <td><img src="https://static.toiimg.com/photo/53099699.cms" alt="Jalebi"></td>
+            <td><button onclick="addToCart('Jalebi', 9)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td> Pav-Bhaji</td>
+            <td> Vegetable,pav</td>
+            <td>15$</td>
+            <td><img src="https://indiasweethouse.in/cdn/shop/files/CheesePavBhaji.png?v=1718887198" alt="Pav-Bhaji"></td>
+            <td><button onclick="addToCart('Pav-Bhaji', 15)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>ChowMein</td>
+            <td>noodles, cabbage, celery, green onions, and garlic</td>
+            <td>8$</td>
+            <td><img src="https://images.getrecipekit.com/20221130023757-untitled-design-12-3.png?aspect_ratio=16:9&quality=90&" alt="ChowMein"></td>
+            <td><button onclick="addToCart('ChowMein',8 )">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>litti chokha</td>
+            <td>whole wheat, black gram flour and brinjal</td>
+            <td>12$</td>
+            <td><img src="https://www.hercircle.in/hcm/EngageImage/8115258E-32E2-4FB3-9A70-2D0A4B8F434C/D/F14A72A1-89E1-4A78-9A0F-8F0ACC5A7FBD.jpg" alt="litti chokha"></td>
+            <td><button onclick="addToCart('litti chokha',12 )">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Veg-Momos</td>
+            <td>plain flour based dumplings steamed with cabbage, carrot and spring onion stuffing</td>
+            <td>8$</td>
+            <td><img src="https://cdn1.foodviva.com/static-content/food-images/snacks-recipes/veg-momos/veg-momos.jpg" alt="Veg-Momos"></td>
+            <td><button onclick="addToCart('Veg-Momos', 8)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Veg-Roll</td>
+            <td>onions, spring onions, cauliflower, peas, corn, broccoli and beans</td>
+            <td>9$</td>
+            <td><img src="https://www.kuchpakrahahai.in/wp-content/uploads/2023/08/Vegetable-spring-rolls-recipe.jpg" alt="Veg-Roll"></td>
+            <td><button onclick="addToCart('Veg-Roll',9 )">Add to Cart</button></td>
+
+        </tr>
+        <tr>
+            <td>Ras malai </td>
+            <td>lattened balls of chhena soaked in malai (a type of clotted cream) flavoured with cardamom. </td>
+            <td>10$</td>
+            <td><img src="https://www.temptingtreat.com/wp-content/uploads/2022/10/DSC_1849-copy.jpg" alt="Ras malai "></td>
+            <td><button onclick="addToCart('Ras malai ',10 )">Add to Cart</button></td>
+
+        </tr>
+        <tr>
+            <td>Chocolate-cake</td>
+            <td>Flour,coco-powder,milk,sugar</td>
+            <td>11$</td>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSil7p2s2jlByVMzJ3GCp7bTA_2YcRsNTbfA6-C84Yqk9VTPQCAYBXafml7yqOahUyK-aY&usqp=CAU" alt="Chocolate-cake"></td>
+            <td><button onclick="addToCart('Chocolate-cake',11 )">Add to Cart</button></td>
+
+        </tr>
+        <tr>
+            <td>Dosa</td>
+            <td>ground and fermented lentil and rice batter</td>
+            <td>7$</td>
+            <td><img src="https://thebellyrulesthemind.net/wp-content/uploads/2022/01/Crispy-Dosa-03-pin-735x1103.jpg" alt="Dosa"></td>
+            <td><button onclick="addToCart('Dosa', 7)">Add to Cart</button></td>
+
+        </tr>
+        <tr>
+            <td>kaju katli</td>
+            <td>cashew nuts, sugar and cardamom powder</td>
+            <td>20$</td>
+            <td><img src="https://palatesdesire.com/wp-content/uploads/2022/10/kaju-katli-recipe@palates-desire-4.jpg" alt="kaju katli"></td>
+            <td><button onclick="addToCart('kaju katli',20 )">Add to Cart</button></td>
+
+        </tr>
+        
+
+    </table>
+
+    <script>
+        
+        function addToCart(food, price) {
+           
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalAmount = parseFloat(localStorage.getItem('totalAmount')) || 0;
+
+           
+            cart.push({food, price});
+            totalAmount += price;
+
+           
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('totalAmount', totalAmount);
+
+            window.location.href = 'cart.html'; 
+             
+        }
+        
+    </script>
+
+</body>
+</html>
