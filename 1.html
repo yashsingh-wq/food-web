@@ -5,10 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link to Local Site</title>
     <style>
-        
+    @keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(45deg, #ff6b6b, #f2a900);
+    }
+    25% {
+        background: linear-gradient(45deg, #f2a900, #2c3e50);
+    }
+    50% {
+        background: linear-gradient(45deg, #2c3e50, #3498db);
+    }
+    75% {
+        background: linear-gradient(45deg, #3498db, #ff6b6b);
+    }
+    100% {
+        background: linear-gradient(45deg, #ff6b6b, #f2a900);
+    }
+}
+
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
@@ -16,6 +33,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-size: 400% 400%;
+    animation: backgroundAnimation 10s ease infinite; 
 }
 
 
@@ -25,13 +44,11 @@ h1 {
     margin-bottom: 20px;
 }
 
-
 p {
     font-size: 18px;
-    color: #7f8c8d;
+    color: #0f0f0f;
     margin-bottom: 20px;
 }
-
 
 a {
     font-size: 18px;
@@ -43,18 +60,22 @@ a {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 a:hover {
     background-color: #3498db;
     color: #fff;
+    transform: scale(1.05);
 }
 
-    </style>
+
+        </style>
 </head>
 <body>
     <h1>Welcome to My Website</h1>
     <p>Click the link below to visit the local site:</p>
-    <a href="http://127.0.0.1:5500/webdesign/index.html" target="_blank">Visit Food Website</a>
+    <a href="http://127.0.0.1:5500/web%20designing/food%20web/index.html" target="_blank">Visit Food Website</a>
 </body>
 </html>
 <!-- food web -->
+
+
+
